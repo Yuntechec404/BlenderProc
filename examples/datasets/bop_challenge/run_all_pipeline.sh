@@ -42,11 +42,11 @@ VAL=0.2
 TEST=0.0
 
 # --- Pipeline Steps ---
-# echo "=== Step 1: Generate models_info.json ==="
-# python gen_models_info.py "$MODELS_DIR" || { echo "gen_models_info.py failed"; exit 1; }
+echo "=== Step 1: Generate models_info.json ==="
+python gen_models_info.py "$MODELS_DIR" || { echo "gen_models_info.py failed"; exit 1; }
 
-# echo "=== Step 2: Generate synthetic scenes ==="
-# blenderproc run main_itodd_random_apple.py "$BOP_PARENT_PATH" "$CC_TEXTURES_PATH" "$OUTPUT_DIR" --num_scenes="$NUM_SCENES" || { echo "main_itodd_random_apple.py failed"; exit 1; }
+echo "=== Step 2: Generate synthetic scenes ==="
+blenderproc run main_itodd_random_apple.py "$BOP_PARENT_PATH" "$CC_TEXTURES_PATH" "$OUTPUT_DIR" --num_scenes="$NUM_SCENES" || { echo "main_itodd_random_apple.py failed"; exit 1; }
 
 echo "=== Step 3: Merge BOP scenes ==="
 python merge_bop_scenes.py --input_root "$OUTPUT_DIR/train_pbr" --output_root "$MERGED_OUTPUT_DIR" || { echo "merge_bop_scenes.py failed"; exit 1; }
