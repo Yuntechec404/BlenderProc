@@ -7,9 +7,9 @@ from tqdm import tqdm
 import trimesh
 
 parser = argparse.ArgumentParser()
-parser.add_argument('camera_parser', help="Path to the camera intrinsic/extrinsic parameter file (e.g., camera.json)")
-parser.add_argument('merged_dir', help="Directory where SINGLESHOTPOSE label files will be saved")
-parser.add_argument('model_path', help="Path to the 3D object model (PLY file)")
+parser.add_argument('--camera_parser', help="Path to the camera intrinsic/extrinsic parameter file (e.g., camera.json)")
+parser.add_argument('--merged_dir', help="Directory where SINGLESHOTPOSE label files will be saved")
+parser.add_argument('--model_path', help="Path to the 3D object model (PLY file)")
 args = parser.parse_args()
 
 # ====== 讀取相機參數 ======

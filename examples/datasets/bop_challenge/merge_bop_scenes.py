@@ -6,8 +6,8 @@ from glob import glob
 from tqdm import tqdm
 
 parser = argparse.ArgumentParser()
-parser.add_argument('input_root', help="Input directory containing generated BOP scenes")
-parser.add_argument('output_root', help="Output directory where merged scenes will be saved")
+parser.add_argument('--input_root', help="Input directory containing generated BOP scenes")
+parser.add_argument('--output_root', help="Output directory where merged scenes will be saved")
 args = parser.parse_args()
 
 input_root = args.input_root

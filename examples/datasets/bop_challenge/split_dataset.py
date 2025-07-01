@@ -5,10 +5,10 @@ import random
 from tqdm import tqdm
 
 parser = argparse.ArgumentParser()
-parser.add_argument('merged_dir', help="Directory where SINGLESHOTPOSE label files will be saved")
-parser.add_argument('train_ratio', help="train ratio")
-parser.add_argument('val_ratio', help="val ratio")
-parser.add_argument('test_ratio', help="test ratio")
+parser.add_argument('--merged_dir', help="Directory where SINGLESHOTPOSE label files will be saved")
+parser.add_argument('--train_ratio', help="train ratio")
+parser.add_argument('--val_ratio', help="val ratio")
+parser.add_argument('--test_ratio', help="test ratio")
 args = parser.parse_args()
 
 # --------- 資料夾設定 ---------
@@ -22,9 +22,9 @@ extra_dirs = ['depth', 'mask', 'mask_visib']
 # train_ratio = 0.8
 # val_ratio   = 0.2
 # test_ratio  = 0.0
-train_ratio = args.train_ratio
-val_ratio = args.val_ratio
-test_ratio = args.test_ratio
+train_ratio = float(args.train_ratio)
+val_ratio = float(args.val_ratio)
+test_ratio = float(args.test_ratio)
 
 # --------- Split 輸出資料夾 ---------
 split_dirs = {
